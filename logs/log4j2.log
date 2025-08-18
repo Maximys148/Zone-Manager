@@ -1,0 +1,16 @@
+2025-08-15 10:26:57.237 INFO  [main] c.s.z.ZoneManagerApplication - Starting ZoneManagerApplication using Java 17.0.15 with PID 9424 (C:\Users\exeve\IdeaProjects\nomad\zone-manager\target\classes started by exeve in C:\Users\exeve\IdeaProjects\nomad\zone-manager)
+2025-08-15 10:26:57.256 DEBUG [main] c.s.z.ZoneManagerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-08-15 10:26:57.256 INFO  [main] c.s.z.ZoneManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-15 10:27:02.386 INFO  [main] c.s.z.ZoneManagerApplication - Started ZoneManagerApplication in 5.674 seconds (process running for 11.702)
+2025-08-15 12:01:41.511 INFO  [main] c.s.z.ZoneManagerApplication - Starting ZoneManagerApplication using Java 17.0.15 with PID 16884 (C:\Users\exeve\IdeaProjects\nomad\zone-manager\target\classes started by exeve in C:\Users\exeve\IdeaProjects\nomad\zone-manager)
+2025-08-15 12:01:41.518 DEBUG [main] c.s.z.ZoneManagerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-08-15 12:01:41.519 INFO  [main] c.s.z.ZoneManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-15 12:01:48.343 INFO  [main] c.s.z.ZoneManagerApplication - Started ZoneManagerApplication in 7.708 seconds (process running for 9.56)
+2025-08-15 12:09:00.552 INFO  [main] c.s.z.ZoneManagerApplication - Starting ZoneManagerApplication using Java 17.0.15 with PID 12892 (C:\Users\exeve\IdeaProjects\nomad\zone-manager\target\classes started by exeve in C:\Users\exeve\IdeaProjects\nomad\zone-manager)
+2025-08-15 12:09:00.558 DEBUG [main] c.s.z.ZoneManagerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-08-15 12:09:00.559 INFO  [main] c.s.z.ZoneManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-15 12:09:06.505 INFO  [main] c.s.z.ZoneManagerApplication - Started ZoneManagerApplication in 6.369 seconds (process running for 7.077)
+2025-08-15 12:10:46.625 INFO  [main] c.s.z.ZoneManagerApplication - Starting ZoneManagerApplication using Java 17.0.15 with PID 10440 (C:\Users\exeve\IdeaProjects\nomad\zone-manager\target\classes started by exeve in C:\Users\exeve\IdeaProjects\nomad\zone-manager)
+2025-08-15 12:10:46.632 DEBUG [main] c.s.z.ZoneManagerApplication - Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-08-15 12:10:46.632 INFO  [main] c.s.z.ZoneManagerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-15 12:10:52.865 INFO  [main] c.s.z.ZoneManagerApplication - Started ZoneManagerApplication in 6.694 seconds (process running for 7.379)
