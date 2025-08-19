@@ -9,7 +9,8 @@
 - **Логирование** ключевых операций
 
 ### ReferencePointController
-`GET /api/shtilFarvater/dashboard_post` - Получение реперной точки
+
+`GET /api/zones/refpoint` - Получение реперной точки
 
 **Тело ответа:**
 ```json
@@ -19,7 +20,7 @@
   "lng": 30.33510
 }
 ```
-`POST /api/shtilFarvater/dashboard_post` - Создание реперной точки
+`POST /api/zones/refpoint` - Создание реперной точки
 
 **Тело запроса:**
 ```json
@@ -36,7 +37,7 @@
   "lng": 30.33510
 }
 ```
-`PATCH /api/shtilFarvater/dashboard_post` - Обновление реперной точки
+`PATCH /api/zones/refpoint` - Обновление реперной точки
 
 **Тело запроса:**
 ```json
@@ -53,7 +54,208 @@
   "lng": 30.33510
 }
 ```
-`DELETE /api/shtilFarvater/dashboard_post` - Удаление реперной точки
+`DELETE /api/zones/refpoint` - Удаление реперной точки
+
+### ReferencePointController
+
+`GET /api/zones` - Создание реперной точки
+
+**Тело ответа:**
+```json
+{
+  "zones": [
+    {
+      "type": "POLYGON",
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "equipmentId": "EQUIP-12345",
+      "pointsCoordinates": [
+        {"lat": 59.93428, "lng": 30.33510},
+        {"lat": 59.93500, "lng": 30.33600},
+        {"lat": 59.93350, "lng": 30.33400},
+        {"lat": 59.93428, "lng": 30.33510}
+      ]
+    },
+    {
+      "type": "SECTOR",
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "equipmentId": "EQUIP-67890",
+      "centerCoordinates": {"lat": 59.93900, "lng": 30.34000},
+      "radiusInMeters": 500,
+      "startAngle": 45,
+      "endAngle": 135
+    }
+  ]
+}
+```
+`POST /api/zones/polygon` - Создание зоны полигон
+
+**Тело запроса:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "params": {
+    "pointsCoordinates": [
+      {
+        "lat": 59.93428,
+        "lng": 30.33510
+      },
+      {
+        "lat": 59.93500,
+        "lng": 30.33600
+      },
+      {
+        "lat": 59.93350,
+        "lng": 30.33400
+      }
+    ]
+  }
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "zoneType": "POLYGON"
+  "params": {
+    "pointsCoordinates": [
+      {
+        "lat": 59.93428,
+        "lng": 30.33510
+      },
+      {
+        "lat": 59.93500,
+        "lng": 30.33600
+      },
+      {
+        "lat": 59.93350,
+        "lng": 30.33400
+      }
+    ]
+  }
+}
+```
+
+`POST /api/zones/sector` - Создание зоны сектор
+
+**Тело запроса:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "params": {
+    "centerCoordinates": {
+      "lat": 59.93428,
+      "lng": 30.33510
+    },
+    "radiusInMeters": 500,
+    "startAngle": 45,
+    "endAngle": 135
+  }
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "zoneType": "CIRCLE_SECTOR",
+  "params": {
+    "centerCoordinates": {
+      "lat": 59.93428,
+      "lng": 30.33510
+    },
+    "radiusInMeters": 500,
+    "startAngle": 45,
+    "endAngle": 135
+  }
+}
+```
+
+`PATCH /api/zones/polygon/{zoneId}` - Обновление зоны полигон, параметр String (id зоны)
+
+**Тело запроса:**
+```json
+{
+  "params": {
+    "pointsCoordinates": [
+      {
+        "lat": 59.93428,
+        "lng": 30.33510
+      },
+      {
+        "lat": 59.93500,
+        "lng": 30.33600
+      },
+      {
+        "lat": 59.93350,
+        "lng": 30.33400
+      }
+    ]
+  }
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "zoneType": "POLYGON"
+  "params": {
+    "pointsCoordinates": [
+      {
+        "lat": 59.93428,
+        "lng": 30.33510
+      },
+      {
+        "lat": 59.93500,
+        "lng": 30.33600
+      },
+      {
+        "lat": 59.93350,
+        "lng": 30.33400
+      }
+    ]
+  }
+}
+```
+
+`PATCH /api/zones/sector/{zoneId}` - Обновление зоны сектор, параметр String (id зоны)
+
+
+**Тело запроса:**
+```json
+{
+  "params": {
+    "centerCoordinates": {
+      "lat": 59.93428,
+      "lng": 30.33510
+    },
+    "radiusInMeters": 500,
+    "startAngle": 45,
+    "endAngle": 135
+  }
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "equipmentId": "EQUIP-12345",
+  "zoneType": "SECTOR",
+  "params": {
+    "centerCoordinates": {
+      "lat": 59.93428,
+      "lng": 30.33510
+    },
+    "radiusInMeters": 500,
+    "startAngle": 45,
+    "endAngle": 135
+  }
+}
+```
+
+`DELETE /api/zone/{zoneId}` - удаление зоны, параметр String (id зоны)
+
 
 !!! ВАЖНО
 - Добавить файл application.yml в src/main/resources/ в нём ты указываешь ip и порты.
