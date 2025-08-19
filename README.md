@@ -37,6 +37,7 @@
 }
 ```
 `PATCH /api/shtilFarvater/dashboard_post` - Обновление реперной точки
+
 **Тело запроса:**
 ```json
 {
