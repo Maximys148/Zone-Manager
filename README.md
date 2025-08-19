@@ -23,6 +23,63 @@
 }
 ```
 
+!!! ВАЖНО
+- Добавить файл application.yml в src/main/resources/ в нём ты указываешь ip и порты.
+Ниже приведу пример файла
+```
+server:
+  port: 9898
+  address: ${IP:192.168.33.33}
+
+spring:
+  application:
+    name: zones
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_IP:192.168.33.33}:9999/postgres
+    username: postgres
+    password: "186Kdc9899K"
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_URL:192.168.11.11:8888}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      spring.json.add.type.headers: false
+      spring.json.type.mapping:
+        zonePolygon:com.stupor.zmr.dto.ZonePolygonResponseDto,
+        zoneSector:com.stupor.zmr.dto.ZoneSectorResponseDto
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: ${server.address}
+    instance-id: ${server.address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://192.168.1.1:2222/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+
+ # kafka:
+  #  bootstrap-servers: ${KAFKA_URL:localhost:1111}
+   # producer:
+    #  key-serializer: org.apache.kafka.common.serialization.StringSerializer
+     # value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+```
 ## 🛠️ Технологический стек
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
