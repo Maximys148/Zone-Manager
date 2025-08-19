@@ -262,8 +262,8 @@
 Ниже приведу пример файла
 ```
 server:
-  port: 9898
-  address: ${IP:192.168.33.33}
+  port: 8888
+  address: 1.1.1.1
 
 spring:
   application:
@@ -273,12 +273,12 @@ spring:
       enabled: ALWAYS
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_IP:192.168.33.33}:9999/postgres
+    url: jdbc:postgresql://${DB_IP:192.168.0.0}:2222/postgres
     username: postgres
     password: "186Kdc9899K"
   kafka:
     producer:
-      bootstrap-servers: ${KAFKA_URL:192.168.11.11:8888}
+      bootstrap-servers: ${KAFKA_URL:192.168.0.0}:2222
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     properties:
@@ -299,20 +299,13 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    ip-address: ${server.address}
-    instance-id: ${server.address}:${server.port}
+    ip-address: ${IP:192.168.2.2}
+    instance-id: ${IP:192.168.2.2}:${server.port}
   client:
     service-url:
-      defaultZone: http://192.168.1.1:2222/eureka/
+      defaultZone: http://${EUREKA_IP:192.168.2.3}:5555/eureka/
     register-with-eureka: true
     fetch-registry: true
-
-
- # kafka:
-  #  bootstrap-servers: ${KAFKA_URL:localhost:1111}
-   # producer:
-    #  key-serializer: org.apache.kafka.common.serialization.StringSerializer
-     # value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 ```
 ## 🛠️ Технологический стек
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
