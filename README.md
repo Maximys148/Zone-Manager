@@ -19,6 +19,40 @@
   "lng": 30.33510
 }
 ```
+`POST /api/shtilFarvater/dashboard_post` - Создание реперной точки
+
+**Тело запроса:**
+```json
+{
+  "lat": 59.93428,
+  "lng": 30.33510
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "lat": 59.93428,
+  "lng": 30.33510
+}
+```
+`PATCH /api/shtilFarvater/dashboard_post` - Обновление реперной точки
+**Тело запроса:**
+```json
+{
+  "lat": 59.93428,
+  "lng": 30.33510
+}
+```
+
+**Тело ответа:**
+```json
+{
+  "lat": 59.93428,
+  "lng": 30.33510
+}
+```
+`DELETE /api/shtilFarvater/dashboard_post` - Удаление реперной точки
 
 !!! ВАЖНО
 - Добавить файл application.yml в src/main/resources/ в нём ты указываешь ip и порты.
